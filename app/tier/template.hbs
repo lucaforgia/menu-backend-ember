@@ -1,0 +1,27 @@
+{{!-- <div>
+	<strong>Location:</strong>{{link-to 'Index' 'index'}}{{#if model.parent}}{{parents-breadcrumbs node=model.parent}}{{/if}} >> {{model.title}}
+</div> --}}
+
+<h2>Edit Tier</h2>
+
+<div id="breadcrumbs">
+	{{ember-breadcrumbs node=model}}
+</div>
+
+<div id="title">
+	<label><span>Title:</span> {{input value=model.title focus-out="save"}}</label>
+</div>
+
+{{outlet "href"}}
+
+<div class="fake-btn">
+	{{#if showHref}}
+		{{link-to "Add a sub-tier" 'tier.children.new' class="link-to"}}
+		{{else}}
+			<a {{action 'goToHref' model}} class="link-to" href="#nothing">End-point: add an href</a>
+	{{/if}}
+</div>
+
+<div class="menu_list children">
+	{{outlet "children"}}
+</div>

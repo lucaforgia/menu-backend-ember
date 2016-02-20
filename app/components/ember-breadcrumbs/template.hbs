@@ -1,0 +1,16 @@
+<li>
+	{{link-to 'Root' 'index'}}
+</li>
+
+
+{{#each allParents as |tier|}}
+	<li>
+		>> {{link-to tier.title 'tier' tier.id}}
+	</li>
+{{/each}}
+
+<li>
+	>> <strong>{{node.title}}</strong>
+</li>
+
+{{yield}}

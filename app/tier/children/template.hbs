@@ -1,0 +1,11 @@
+<h3>Sub-tiers</h3>
+
+<ul>
+	{{#each model.children as |tier|}}
+		{{menu-row removeTier='removeTier' node=tier moveTier='moveTier'}}
+	{{/each}}
+</ul>
+
+{{link-to 'Add tier' 'tier.children.new' model.id class="add-tier-btn"}}
+
+{{outlet}}

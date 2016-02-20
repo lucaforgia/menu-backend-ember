@@ -1,0 +1,13 @@
+
+<div>
+	<h3>Subtiers</h3>
+	<ul>
+		{{#each node as |tier|}}
+			<li>
+				{{link-to tier.title "tier" tier.id}}
+			</li>
+		{{/each}}
+	</ul>
+</div>
+
+{{yield}}

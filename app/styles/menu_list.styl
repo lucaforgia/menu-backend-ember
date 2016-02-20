@@ -1,0 +1,62 @@
+drop-h = 13px
+selected-h = 50px
+row-color = azure
+.menu_list
+	
+	list-style-type none
+
+	.drop-in
+		position relative
+		cursor grab
+		background-color row-color
+		transition height 0.3s
+		height drop-h
+		width 100%
+		&.selected
+			height selected-h !important
+			border-left 2px solid #DDD
+			border-right 2px solid #DDD
+			
+	.drop-up
+		margin-top 5px
+
+	div
+		&.menu-tier
+			cursor grab
+			background-color row-color
+			margin 0px 0px
+			
+			.inheritance
+				padding-left 10px
+	
+	ul
+		list-style-type none
+	
+	.drop-down
+		background-color row-color
+		> div:nth-child(1)
+			width 200px
+			float left
+		> div:nth-child(2)
+			float left
+			width 500px
+		> div:last-child
+			clear both
+	.tooltip
+		position absolute
+		top -70px
+		left 50px
+		width 250px
+		text-align center
+		padding 10px 20px
+		display none
+		background-color white
+		border 2px solid black
+		
+		&.selected
+			display block
+			
+
+&.no-padding-left
+	padding-left 0px
+	margin-left 0px

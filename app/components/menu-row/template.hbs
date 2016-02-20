@@ -1,0 +1,34 @@
+
+{{!-- <div class="drop-up" {{action 'ondroppa' on="drop"}}>sssssss</div> --}}
+
+<div class="drop-up">
+	{{#drop-in-container node=node moveTier='moveTier' tierDropped='tierDropped'}}
+		<div class="tooltip">Drop as sibling</div>
+	{{/drop-in-container}}
+</div>
+<div class="menu-tier">
+	<div class="no">
+		{{yield}} <strong>{{node.title}} {{node.id}}</strong> -------- {{link-to 'Edit' 'tier' node.id}} <a href="#nothing" {{action 'removeTier' node true}}>Remove</a>
+	</div>
+	{{!-- <div class="left drop-child">
+		{{drop-in-container node=node moveTier='moveTier' tierDropped='tierDroppedChild'}}
+	</div> --}}
+
+</div>
+
+<div class="drop-down">
+	{{#drop-in-container node=node moveTier='moveTier' tierDropped='tierDroppedDown'}}
+		<div class="tooltip">Drop as sibling</div>
+	{{/drop-in-container}}
+	{{#drop-in-container node=node moveTier='moveTier' tierDropped='tierDroppedChild'}}
+		<div class="tooltip">Drop as child</div>
+	{{/drop-in-container}}
+	<div></div>
+</div>
+
+
+{{#if showChildren}}
+	{{#if node.children}}
+		{{menu-list removeTier='removeTier' node=node moveTier='moveTier'}}
+	{{/if}}
+{{/if}}

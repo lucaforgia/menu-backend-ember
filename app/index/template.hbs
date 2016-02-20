@@ -1,0 +1,9 @@
+<h2>Show all tiers</h2>
+
+<div class="index-cont">
+	{{menu-list node=model.children removeTier='removeTier' moveTier='moveTier'}}
+
+	{{link-to 'Add Tier' 'index.new' class="add-tier-btn"}}
+</div>
+
+{{outlet}}

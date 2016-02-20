@@ -1,0 +1,14 @@
+<div class="overlay"></div>
+<div class="main_cont">
+	<div class="">
+		<div class="">
+			<label>
+				<strong>
+					Title of the tier
+				</strong>
+				{{input value=node.title name="title"}} <button {{action 'saveChild' node}}>Save</button>
+			</label>
+		</div>
+	</div>
+</div>
+{{yield}}

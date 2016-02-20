@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'menu-backend-ember',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/',//'/demo/navigation_backend',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -20,6 +20,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+	//   console.log('cacca');
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
