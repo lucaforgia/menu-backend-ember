@@ -1,9 +1,13 @@
 drop-h = 13px
 selected-h = 50px
 row-color = azure
+row-color-car = black
+drop_radius = 5px
+
 .menu_list
-	
+
 	list-style-type none
+	color row-color-car
 
 	.drop-in
 		position relative
@@ -16,23 +20,31 @@ row-color = azure
 			height selected-h !important
 			border-left 2px solid #DDD
 			border-right 2px solid #DDD
-			
+
 	.drop-up
 		margin-top 5px
+
 
 	div
 		&.menu-tier
 			cursor grab
 			background-color row-color
 			margin 0px 0px
-			
-			.inheritance
+
+			a
+				color row-color-car
+				&.edit-link
+					padding-right 15px
+					padding-left 15px
+			strong
+				font-size 1.3rem
 				padding-left 10px
-	
+
 	ul
 		list-style-type none
-	
+
 	.drop-down
+		border-bottom-right-radius drop_radius
 		background-color row-color
 		> div:nth-child(1)
 			width 200px
@@ -43,6 +55,7 @@ row-color = azure
 		> div:last-child
 			clear both
 	.tooltip
+		color #006D61
 		position absolute
 		top -70px
 		left 50px
@@ -52,10 +65,10 @@ row-color = azure
 		display none
 		background-color white
 		border 2px solid black
-		
+
 		&.selected
 			display block
-			
+
 
 &.no-padding-left
 	padding-left 0px

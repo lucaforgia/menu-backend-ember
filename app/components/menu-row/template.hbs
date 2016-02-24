@@ -8,7 +8,7 @@
 </div>
 <div class="menu-tier">
 	<div class="no">
-		{{yield}} <strong>{{node.title}} {{node.id}}</strong> -------- {{link-to 'Edit' 'tier' node.id}} <a href="#nothing" {{action 'removeTier' node true}}>Remove</a>
+		<strong>{{node.title}}</strong> {{yield}} --------{{link-to 'Edit' 'tier' node.id class="edit-link"}}<a href="#nothing" {{action 'removeTier' node true}}>Remove</a>
 	</div>
 	{{!-- <div class="left drop-child">
 		{{drop-in-container node=node moveTier='moveTier' tierDropped='tierDroppedChild'}}

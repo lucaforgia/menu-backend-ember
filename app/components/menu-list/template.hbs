@@ -2,14 +2,14 @@
 	{{#each node.children as |child_node index|}}
 		{{!-- <li class="drop-in-target"></li> --}}
 		{{#menu-row removeTier='removeTier' node=child_node moveTier='moveTier' showChildren=showChildren}}
-			<span class="inheritance">({{plus-one index}} of <em>{{node.title}}</em>) => </span>
+			<span class="inheritance">({{plus-one index}} child of <em>{{node.title}}</em>)</span>
 		{{/menu-row}}
 	{{/each}}
-	
+
 {{else}}
 	{{#each node as |child_node index|}}
 		{{#menu-row node=child_node removeTier='removeTier' moveTier='moveTier' showChildren=showChildren}}
-			<span class="inheritance">({{plus-one index}} of <em>Root</em>) => </span>
+			<span class="inheritance">({{plus-one index}} child of <em>Root</em>)</span>
 		{{/menu-row}}
 	{{/each}}
 {{/if}}
