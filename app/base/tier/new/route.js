@@ -11,12 +11,14 @@ export default Ember.Route.extend({
 	},
 	actions: {
 		willTransition(transition) {
-				if (this.get('currentModel').get('hasDirtyAttributes')) {
+				var title = this.get('currentModel.title') || '';
+				if (this.get('currentModel.hasDirtyAttributes') && title.replace(/[ ]g/,'') !== '') {
 					var confirm = window.confirm(
 						'You did some unsaved changes on the subtiers. Are you sure you want to discard these?'
 					);
 					if (!confirm) {
 						transition.abort();
+						window.history.forward();
 					}
 				}
 			},

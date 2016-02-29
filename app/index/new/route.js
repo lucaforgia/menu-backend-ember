@@ -14,5 +14,12 @@ export default NewTierRoute.extend({
 	},
 	afterSave(){
 		this.transitionTo('index');
+	},
+	actions:{
+		onKeyDown(keyCode){
+			if(keyCode === 27){
+				this.transitionTo('index');
+			}
+		}
 	}
 });

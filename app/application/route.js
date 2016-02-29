@@ -53,7 +53,7 @@ export default Ember.Route.extend({
 			else{
 				newParent = target;
 			}
-			
+
 			var getMovedIdx = function(side, idx){
 				if(side === 'up'){return idx;}
 				if(side === 'down'){return idx + 1;}
@@ -74,6 +74,25 @@ export default Ember.Route.extend({
 
 			return false;
 
+		},
+		resetDb(){
+			var _t = this;
+			new Ember.RSVP.Promise(function (resolve, reject) {
+				Ember.$.ajax('/api/fill-standard',{
+					success:function (res) {
+						resolve(res);
+					},
+					error:function (err) {
+						reject(err);
+					}
+				});
+			})
+			.then(function () {
+				window.location.reload();
+			})
+			.catch(function (error) {
+				alert(error)
+			});
 		}
 	}
 });
